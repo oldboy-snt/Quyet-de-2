@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css" type="text/css">
+</head>
+<body>
+    <div class ="tab-bar">
+        <button id="js-home">Quyết.đê!</button>
+        <button id="js-ask">Hỏi nhanh</button>
+        <button id="js-result"> Đáp gọn </button>
+    </div>
+    <div class="container" id = 'app'>
+            <h2>Hãy hỏi cộng đồng một câu hỏi đúng/sai hoặc có/không</h2>
+            <form action="/create-question" method="POST" class='create-question-form'>
+                <textarea maxlength="200" class="question-input" rows="6"></textarea>
+                <div class="lengthleft">Còn 200/200 kí tự</div>
+                <div class="error-message"> </div>
+                <input type="submit" value="Gửi" class="btn-submitQuestion" /> 
+            </form>
+    </div>
+</body>
+<script src="./ask.js"></script>
+</html>
