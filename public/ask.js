@@ -10,9 +10,10 @@ window.onload = () => {
         //. innerText .innerHTML
         lengthLeftDiv.innerHTML = `Còn ${lengthLeft}/200 kí tự`;
     });
+
     formElement.addEventListener('submit', (event)=>{
         event.preventDefault();
-        const value = textareaElement.value;
+        const value = textareaElement.value.trim();
         if(!value) {
             //show errors message
             
@@ -42,6 +43,19 @@ window.onload = () => {
                 });
             textareaElement.value = ``;    
         }
+    });
+
+    document.querySelector('#js-home').addEventListener("click",() => {
+        window.location.href = `/home`;
+    });
+    document.querySelector('#js-ask').addEventListener("click",() => {
+        window.location.href = `/ask`;
+    });
+    document.querySelector('#js-question').addEventListener("click",() => {
+        window.location.href = `/question`;
+    });
+    document.querySelector('#js-search').addEventListener("click",() => {
+        window.location.href = `/search`;
     });
 }
 

@@ -103,3 +103,44 @@
     color: rgb(129, 127, 125);
     font-size: 120%;
 }
+
+form.search {
+    box-sizing: border-box;
+}
+
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+  
+form.search button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+  
+form.search button:hover {
+    background: #0b7dda;
+}
+  
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+a:visited {
+    color: rgba(4, 112, 212, 0.712);
+}
+a:hover {
+    color: rgb(252, 1, 1);
+}

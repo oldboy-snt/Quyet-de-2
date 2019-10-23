@@ -17,16 +17,12 @@
         <button id="js-search" class="fa fa-search">  Tìm kiếm </button>
     </div>
     <div class="container" id = 'app'>
-        <h1 style="margin-bottom:40px;margin-left:20%" class="question-random"> Câu hỏi </h1>
-        <div class="react-button">
-            <button class="yes" style="background-color:red"> Sai/ Không/ Trái </button>
-            <button class="no"  style="background-color:blue"> Đúng/ Có/ Phải </button>
-        </div>
-        <div class="button-container">
-            <button class="result"> Kết quả vote </button>
-            <button class="other-question"> Câu hỏi khác </button>
-        </div>    
+        <h1 class="questions" style="padding-bottom: 2%;margin-left: 13%;margin-top: 5%;"> Bạn muốn tìm câu hỏi nào thì gõ từ khóa bên dưới nhé ! Mệt mỏi thực sự. </h1>
+        <form class="search" style="margin:auto;max-width:800px;margin-bottom: 30px;" method="POST" action="/get-questions">
+            <input class="search-input" type="text" placeholder="Search.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
     </div>
 </body>
-<script src="./home.js"></script>
+<script src="./search.js"></script>
 </html>
