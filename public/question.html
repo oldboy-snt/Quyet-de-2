@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./index.css" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Quyết con mẹ mày đi!</title>
 </head>
 <body>
-        <div class ="tab-bar">
-            <button id="js-home" class="fa fa-home">  Quyết đê! </button>
-            <button id="js-ask" class="fa fa-question">  Hỏi nhanh</button>
-            <button id="js-question" class="fa fa-reply">  Đáp gọn </button>
-            <button id="js-search" class="fa fa-search">  Tìm kiếm </button>
+        <div class ="d-block bg-dark text-white">
+            <button id="js-home" class="fa fa-home btn btn-dark btn-lg p-3">  Quyết đê! </button>
+            <button id="js-ask" class="fa fa-question btn btn-dark btn-lg p-3">  Hỏi nhanh</button>
+            <button id="js-question" class="fa fa-reply btn btn-dark btn-lg p-3">  Đáp gọn </button>
+            <button id="js-search" class="fa fa-search btn btn-dark btn-lg p-3">  Tìm kiếm </button>
         </div>
-        <div class="container" id = 'app'>
-            <h1 class="questions"> Câu hỏi </h1>
-            <div class="vote" style="margin-top:150px;margin-bottom:10px;margin-left: 45%;font-size:150%"> 0 vote </div>
-            <div class="flex-voteRate">
-                <div class="dislike" style="background-color:red"> 50% dislike </div>
-                <div class="like" style="background-color:blue"> 50% like </div>
+        <div class="container mt-5" id = 'app'>
+            <h1 class="questions text-center"> Câu hỏi </h1>
+            <div class="text-center mt-5"> <h3 class="vote">  0 vote </h3> </div>
+            <div class="d-flex bd-highlight mt-5">
+                <div class="dislike bg-danger text-white text-center flex-fill p-1 rounded-left"> 50% dislike </div>
+                <div class="like bg-primary text-white text-center flex-fill p-1 rounded-right"> 50% like </div>
             </div>
-            <button class="js-otherQuestion"> Xem câu hỏi khác </button>
+            <div class="text-center">
+                <button class="js-otherQuestion btn btn-success mt-5"> Xem câu hỏi khác </button>
+            </div>
         </div>
         
 </body>
 <script src="./question.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
 

@@ -1,30 +1,68 @@
 window.onload =  () => {
     // Get question by ID
     const url = window.location.href;
-    const idString = url.substr(url.indexOf("=")+1);
+
+    const equalPosition = url.indexOf("=");
+
+    if(equalPosition !== -1) {
+        idString = url.substr(equalPosition + 1);
+        fetchQuestion(idString).then((question=>{
+
+            const like = Number(question.data.like);
+            const dislike = Number(question.data.dislike);
+
+            document.querySelector('.questions').innerText = question.data.content;
+            document.querySelector('.vote').innerText = dislike + like +" votes";
+            if (like === 0 &&  dislike === 0) {
+             document.querySelector('.dislike').innerText = '50% dislike';
+             document.querySelector('.like').innerText = '50% like';
+            } else {
+             document.querySelector('.dislike').innerText = ((dislike / (dislike + like))*100).toFixed(2) + " % dislike"; 
+             document.querySelector('.like').innerText = ((like / (dislike + like))*100).toFixed(2) + " % like";
+            }
+            
+        }));
+    } else {
+        fetchQuestionsRandom()
+        .then(question=>{
+
+            const like = Number(question.data.like);
+            const dislike = Number(question.data.dislike);
+
+            document.querySelector('.questions').innerText = question.data.content;
+            document.querySelector('.vote').innerText = dislike + like +" votes";
+            if (like === 0 &&  dislike === 0) {
+                document.querySelector('.dislike').innerText = '50% dislike';
+                document.querySelector('.like').innerText = '50% like';
+               } else {
+                document.querySelector('.dislike').innerText = ((dislike / (dislike + like))*100).toFixed(2) + " % dislike"; 
+                document.querySelector('.like').innerText = ((like / (dislike + like))*100).toFixed(2) + " % like";
+                console.log(Math.floor(dislike*1.2 / (dislike + like)));
+                document.querySelector('.dislike').classList.add("col-"+ Math.floor(dislike*12 / (dislike + like)))
+            }
+        })
+    }
     
-        
-   fetchQuestion(idString).then((question=>{
-
-       document.querySelector('.questions').innerText = question.data.content;
-       document.querySelector('.vote').innerText = question.data.dislike + question.data.like +" votes";
-       if (question.data.like === question.data.dislike) {
-        document.querySelector('.dislike').innerText = '50% dislike';
-        document.querySelector('.like').innerText = '50% like';
-       } else {
-        document.querySelector('.dislike').innerText = ((question.data.dislike / (question.data.dislike + question.data.like))*100).toFixed(2) + "% dislike"; 
-        document.querySelector('.like').innerText = ((question.data.like / (question.data.dislike + question.data.like))*100).toFixed(2) + "% like";
-       }
-       
-   }));
-
+         
    document.querySelector('.js-otherQuestion').addEventListener("click",()=>{
         fetchQuestionsRandom()
         .then(question=>{
+
+            
+            const like = Number(question.data.like);
+            const dislike = Number(question.data.dislike);
+            
             document.querySelector('.questions').innerText = question.data.content;
-            document.querySelector('.vote').innerText = question.data.dislike + question.data.like +" votes";
-            document.querySelector('.dislike').innerText = ((question.data.dislike / (question.data.dislike + question.data.like))*100).toFixed(2) + "% dislike"; 
-            document.querySelector('.like').innerText = ((question.data.like / (question.data.dislike + question.data.like))*100).toFixed(2) + "% like";
+            document.querySelector('.vote').innerText = dislike + like +" votes";
+            if (like === 0 &&  dislike === 0) {
+                document.querySelector('.dislike').innerText = '50% dislike';
+                document.querySelector('.like').innerText = '50% like';
+               } else {
+                 
+                document.querySelector('.dislike').innerText = ((dislike / (dislike + like))*100).toFixed(2) + " % dislike"; 
+                document.querySelector('.like').innerText = ((like / (dislike + like))*100).toFixed(2) + " % like";
+                document.querySelector('.dislike').classList.add("col-"+ Math.floor(dislike*12 / (dislike + like)))
+            }
         })
    });
 

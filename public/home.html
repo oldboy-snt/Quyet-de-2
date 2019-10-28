@@ -4,29 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./index.css" type="text/css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Quyết con mẹ mày đi!</title>
 </head>
 <body>
-    <div class ="tab-bar">
-        <button id="js-home" class="fa fa-home">  Quyết đê! </button>
-        <button id="js-ask" class="fa fa-question">  Hỏi nhanh</button>
-        <button id="js-question" class="fa fa-reply">  Đáp gọn </button>
-        <button id="js-search" class="fa fa-search">  Tìm kiếm </button>
+    <div class ="d-block bg-dark text-white">
+        <button id="js-home" class="fa fa-home btn btn-dark btn-lg p-3">  Quyết đê! </button>
+        <button id="js-ask" class="fa fa-question btn btn-dark btn-lg p-3">  Hỏi nhanh</button>
+        <button id="js-question" class="fa fa-reply btn btn-dark btn-lg p-3">  Đáp gọn </button>
+        <button id="js-search" class="fa fa-search btn btn-dark btn-lg p-3">  Tìm kiếm </button>
     </div>
     <div class="container" id = 'app'>
-        <h1 style="margin-bottom:40px;margin-left:20%" class="question-random"> Câu hỏi </h1>
-        <div class="react-button">
-            <button class="yes" style="background-color:red"> Sai/ Không/ Trái </button>
-            <button class="no"  style="background-color:blue"> Đúng/ Có/ Phải </button>
+        <h1 class="question-random mt-5 text-center" style="margin-bottom: 150px;"> Câu hỏi </h1>
+        <div class="react-button text-center" style="margin-bottom: 150px;">
+            <button class="yes btn btn-danger btn-lg"> Sai/ Không/ Trái </button>
+            <button class="no btn btn-primary btn-lg"> Đúng/ Có/ Phải </button>
         </div>
-        <div class="button-container">
-            <button class="result"> Kết quả vote </button>
-            <button class="other-question"> Câu hỏi khác </button>
+        <div class="button-container text-center" >
+            <button class="result btn btn-outline-dark btn-lg "> Kết quả vote </button>
+            <button class="other-question btn btn-outline-dark btn-lg "> Câu hỏi khác </button>
         </div>    
     </div>
 </body>
 <script src="./home.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

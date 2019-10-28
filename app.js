@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const questionsModel = require('./model');
 
 
+
 mongoose.connect('mongodb://localhost:27017/quyet-de-web29', { useNewUrlParser: true }, (err) => {
     if (err) {
         console.log(err);
@@ -127,32 +128,34 @@ mongoose.connect('mongodb://localhost:27017/quyet-de-web29', { useNewUrlParser: 
 
         app.get('/get-any-question', (req, res) => {
 
-            questionsModel.countDocuments().exec(function(err, count) {
+            questionsModel.aggregate([{$sample : {size : 1}}]).exec(function(err, data) {
 
-                const random = Math.floor(Math.random() * count)
-                
-                questionsModel.findOne().skip(random).exec( function (err, data){
                     if (err) {
                         res.status(500).json({
                             success: false,
                             message: err.message
                         });
-                    } else {
+                    } 
+                    else if (!data[0]){
+                        res.status(404).json({
+                            success : false,
+                            message : "Question's not found"
+                        })
+                    }
+                    else {
                         res.json({
                             success: true,
                             data: {
-                                id : data._id,
-                                content : data.content,
-                                like : data.like,
-                                dislike : data.dislike
+                                id : data[0]._id,
+                                content : data[0].content,
+                                like : data[0].like,
+                                dislike : data[0].dislike
                             }
                         });
                     }
                 })
 
-            })
-        });
-
+            });
         app.listen(3000);
     }
 })
